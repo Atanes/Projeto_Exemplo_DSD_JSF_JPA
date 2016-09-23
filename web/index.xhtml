@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Portal da Universidade - Página inicial</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/css/estilo_projeto.css" type="text/css"/>
+        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" type="text/css"/>
+        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" type="text/css"/>
+    </head>
+    <body>
+        <div id="container">
+            <div class="cabecalho">
+                <img src="resources/imagens/portalAluno-01.png" alt="Imagem do portal do aluno"/>
+                <h1>Portal da Universidade</h1>
+            </div>
+            <hr/>
+            <nav class="navbar navbar-link">
+                <div class="container-fluid">
+                    <h:form>
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <h:commandLink action="CadastrarProfessor" class="btn btn-link btn-lg left">
+                                    <span class="glyphicon glyphicon-user"></span> Cadastrar Professores
+                                </h:commandLink>
+                            </li>
+                            <li>
+                                <h:commandLink action="ListarProfessores" class="btn btn-link btn-lg">
+                                    <span class="glyphicon glyphicon-list-alt"></span> Listar Professores
+                                </h:commandLink>
+                            </li>
+                        </ul>
+                    </h:form>
+                </div>
+            </nav>
+        </div>
+    </body>
+
+</html>
+

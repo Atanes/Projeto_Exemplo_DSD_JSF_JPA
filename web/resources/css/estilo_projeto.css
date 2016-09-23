@@ -1,0 +1,74 @@
+@import 'https://fonts.googleapis.com/css?family=Cinzel';
+
+.estilo_corpo {
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    background-color: azure;
+}
+
+hr {
+    clear: both;
+    border-color: aquamarine;
+    line-height:2px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+thead {
+    background-color: deepskyblue;
+}
+
+tbody tr:nth-child(odd){
+   background-color: #E9E9E9;
+}
+#tabela_alunos {
+    width: 90%;
+    margin-left: 5%;
+}
+
+#container {
+   width: 800px;
+   margin: 0 auto;
+}
+
+#label_portal{
+   font-family: 'Cinzel', serif;
+   font-size: 1.2em;
+}
+.cabecalho {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+}
+
+.cabecalho img {
+    float: left;
+    margin-top: 0px;
+    margin-left: 5px;
+    width: 150px;
+}
+
+.cabecalho h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4em;
+    color: #337ab7;
+    position: relative;
+    margin-top: 20px;
+}
+.cabecalho h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5em;
+    color: #337ab7;
+    position: relative;
+    margin-top: 20px;
+}
+.centralizar {
+    text-align: center;
+}
+
+.margen_padrao {
+    margin: 5px 5px 5px 5px;
+}
