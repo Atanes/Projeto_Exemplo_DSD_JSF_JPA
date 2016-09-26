@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Portal da Universidade - Cadastro de Professores</title>
         <meta charset="UTF-8"/>
@@ -22,27 +23,37 @@
                 <div class="form-group row">
                     <h:outputLabel class="col-xs-2">Nome:</h:outputLabel>
                     <div class="col-xs-8">
-                        <h:inputText class="form-control" value="#{professorBean.prof.nome}"/>
+                        <h:inputText id="nome" class="form-control" value="#{professorBean.prof.nome}" required="true" requiredMessage="Preenchimento do campo &ldquo;Nome&rdquo; é obrigatório!!"/>
+                        <h:message class="alert-danger" for="nome"/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h:outputLabel class="col-xs-2">Titulação:</h:outputLabel>
                     <div class="col-xs-8">
-                        <h:inputText class="form-control" value="#{professorBean.prof.titulacao}"/>
+                        <h:selectOneMenu id="Ctitulacao" class="form-control" value="#{professorBean.prof.titulacao}" required="true" requiredMessage="Preenchimento do campo &ldquo;Titulação&rdquo; é obrigatório!!" >
+                            <f:selectItem itemValue="" itemLabel="Selecione..." />
+                            <f:selectItem itemValue="Doutor" itemLabel="Doutor" />
+                            <f:selectItem itemValue="Mestre" itemLabel="Mestre" />
+                            <f:selectItem itemValue="Especialista" itemLabel="Especialista" />
+                        </h:selectOneMenu>
+                        <h:message class="alert-danger" for="Ctitulacao"/>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <h:outputLabel class="col-xs-2">Contratação:</h:outputLabel>
+                    <h:outputLabel class="col-xs-2">Ano contratação:</h:outputLabel>
                     <div class="col-xs-8">
-                        <h:inputText class="form-control" value="#{professorBean.prof.anocontratacao}"/>
+                        <h:inputText id="ano" class="form-control" value="#{professorBean.prof.anocontratacao}" required="true" requiredMessage="Preenchimento do campo &ldquo;Ano contratação&rdquo; é obrigatório!!"/>
+                        <h:message class="alert-danger" for="ano"/>
                     </div>
                 </div>
                 <div class="row">
-                    <h:commandButton class="btn btn-info margen_padrao" action="index" value="Home"/>
-                    <h:commandButton class="btn btn-info margen_padrao" value="Salvar" action="#{professorBean.salva}"/>
+                    <h:link class="btn btn-info margen_padrao" outcome="index.xhtml">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+                    </h:link>
+                    <h:commandLink class="btn btn-info margen_padrao" action="#{professorBean.salva}">
+                        <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Salvar
+                    </h:commandLink>
                 </div>
-
-
             </h:form>
         </div>
     </h:body>
