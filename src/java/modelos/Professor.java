@@ -6,6 +6,7 @@
 package modelos;
 
 import java.io.Serializable;
+import javax.faces.bean.ViewScoped;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -14,6 +15,7 @@ import javax.persistence.Id;
  * @author UsuarioGeral
  */
 @javax.persistence.Entity
+@ViewScoped
 public class Professor implements Serializable {
     
     @Id

@@ -6,8 +6,13 @@
 package apoio;
 
 import java.util.List;
+import javafx.application.Application;
+import javax.faces.application.ViewHandler;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import modelos.Professor;
@@ -23,12 +28,17 @@ public class ProfessorBean {
 
     private Professor prof = new Professor();
     private List<Professor> professores;
+    private UIComponent panelForm;
 
     /**
      * Creates a new instance of ProfessorBean
      */
     public ProfessorBean() {
         prof.setId(null);
+    }
+
+    public void setPanelForm(UIComponent panelForm) {
+        this.panelForm = panelForm;
     }
 
     public Professor getProf() {
@@ -46,20 +56,24 @@ public class ProfessorBean {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
             System.out.println("Salvando a pessoa.");
+            System.out.println(prof.getNome());
+            //System.out.println(prof.getId());
             // Verifica se a pessoa ainda não está salva no banco de dados.
             if (prof.getId() == null) {
                 //Salva os dados da pessoa.
                 em.persist(prof);
+                System.out.println("NOVO");
             } else {
                 //Atualiza os dados da pessoa.
                 prof = em.merge(prof);
+                System.out.println("VELHO");
             }
             // Finaliza a transação.
             em.getTransaction().commit();
         } finally {
             em.close();
         }
-        prof = new Professor();
+
         this.professores = null;
         return "ListarProfessores";
     }
@@ -76,19 +90,32 @@ public class ProfessorBean {
         return professores;
     }
 
-    public String excluir(Professor professor) {
-        EntityManager em = JPAUtil.getEntityManager();
-        em.getTransaction().begin();
-        professor = em.merge(professor);
-        em.remove(professor);
-        em.getTransaction().commit();
-        em.close();
+    public void excluir(Professor professor) {
+
+        if (professor.getId() != null) {
+            EntityManager em = JPAUtil.getEntityManager();
+
+            System.out.println(professor.getId() + ", " + professor.getNome());
+            em.getTransaction().begin();
+            //professor = em.find(Professor.class, professor.getId());
+            professor = em.merge(professor);
+            em.remove(professor);
+            em.getTransaction().commit();
+            em.close();
+        }
 
         this.professores = null;
-        return "ListarProfessores";
+        //return "ListarProfessores";
+
     }
-    public String alterar(Professor p){
+
+    public String alterar(Professor p) {
         this.prof = p;
+        return "CadastrarProfessor";
+    }
+
+    public String cadastrarNovo() {
+        prof = new Professor();
         return "CadastrarProfessor";
     }
 }
