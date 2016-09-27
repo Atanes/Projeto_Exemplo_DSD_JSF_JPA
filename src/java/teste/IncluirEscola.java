@@ -21,7 +21,7 @@ public class IncluirEscola {
         
         Escola escola = new Escola();
         escola.setNome("Escola de Engenharia");
-        escola.setLocal("Rudge Ramos");
+        escola.setLocalizacao("Rudge Ramos");
         escola.setAnoCriacao(2015);
         
         EntityTransaction tx = em.getTransaction();

@@ -18,7 +18,7 @@
             </div>
             <hr/>
             <nav class="navbar navbar-link">
-                <div class="container-fluid">
+                <div>
                     <h:form>
                         <ul class="nav navbar-nav navbar-left">
                             <li>
@@ -29,6 +29,16 @@
                             <li>
                                 <h:commandLink action="/professor/ListarProfessores" class="btn btn-link btn-lg">
                                     <span class="glyphicon glyphicon-list-alt"></span> Listar Professores
+                                </h:commandLink>
+                            </li>
+                            <li>
+                                <h:commandLink action="/escola/CadastrarEscola" class="btn btn-link btn-lg left">
+                                    <span class="glyphicon glyphicon-tower"></span> Cadastrar Escola
+                                </h:commandLink>
+                            </li>
+                            <li>
+                                <h:commandLink action="/escola/ListarEscolas" class="btn btn-link btn-lg">
+                                    <span class="glyphicon glyphicon-list"></span> Listar Escolas
                                 </h:commandLink>
                             </li>
                         </ul>

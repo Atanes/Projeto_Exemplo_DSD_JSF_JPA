@@ -6,6 +6,8 @@
 package modelos;
 
 import java.io.Serializable;
+import java.util.Objects;
+import javax.faces.bean.ViewScoped;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,12 +17,14 @@ import javax.persistence.Id;
  * @author UsuarioGeral
  */
 @Entity
+@ViewScoped
 public class Escola implements Serializable {
+    
     @Id
     @GeneratedValue
     private Long id;
     private String nome;
-    private String local;
+    private String localizacao;
     private int anoCriacao;
 
     public Long getId() {
@@ -39,12 +43,12 @@ public class Escola implements Serializable {
         this.nome = nome;
     }
 
-    public String getLocal() {
-        return local;
+    public String getLocalizacao() {
+        return localizacao;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
     }
 
     public int getAnoCriacao() {
@@ -53,6 +57,29 @@ public class Escola implements Serializable {
 
     public void setAnoCriacao(int anoCriacao) {
         this.anoCriacao = anoCriacao;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.nome);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Escola other = (Escola) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
     
     

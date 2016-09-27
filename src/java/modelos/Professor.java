@@ -6,6 +6,7 @@
 package modelos;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.faces.bean.ViewScoped;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -55,6 +56,32 @@ public class Professor implements Serializable {
 
     public void setAnocontratacao(Integer anoContratacao) {
         this.anoContratacao = anoContratacao;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.id);
+        hash = 59 * hash + Objects.hashCode(this.nome);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Professor other = (Professor) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return true;
     }
     
     
