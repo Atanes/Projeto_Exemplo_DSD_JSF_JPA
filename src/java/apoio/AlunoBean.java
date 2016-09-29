@@ -9,6 +9,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import modelos.Aluno;
 
 /**
@@ -35,6 +36,14 @@ public class AlunoBean {
     }
 
     public List<Aluno> getAlunos() {
+        if (this.alunos == null) {
+            EntityManager em = JPAUtil.getEntityManager();
+            Query a = em.createQuery("select a from Aluno a",
+                    Aluno.class);
+            this.alunos = a.getResultList();
+            em.close();
+        }
+        
         return alunos;
     }
 
