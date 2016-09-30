@@ -43,7 +43,9 @@
                             <f:facet name="header">
                                 <h:outputText value="Data Nascimento"/>
                             </f:facet>
-                            <h:outputText value="#{item.dtaNascimento}"/>
+                            <h:outputText value="#{item.dtaNascimento.time}">
+                                <f:convertDateTime type="both" pattern="dd/MM/yyyy" timeZone="GMT-3"/>
+                            </h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">

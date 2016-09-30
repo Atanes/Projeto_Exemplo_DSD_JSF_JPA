@@ -55,7 +55,7 @@ public class AlunoBean {
             em.getTransaction().begin();
             Aluno a = em.find(Aluno.class, aluno.getMatricula());
             // Verifica se a pessoa ainda não está salva no banco de dados.
-            if (a.getMatricula() == null) {
+            if (a != null) {
                 //Atualiza os dados da pessoa.
                 aluno = em.merge(aluno);
             } else {

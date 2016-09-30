@@ -11,7 +11,6 @@ import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import modelos.Aluno;
-import modelos.Escola;
 
 /**
  *

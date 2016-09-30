@@ -45,8 +45,7 @@
                     <h:outputLabel class="col-xs-2">Data nascimento:</h:outputLabel>
                     <div class="col-xs-8">
                         <h:inputText id="dtanasc" class="form-control" value="#{alunoBean.aluno.dtaNascimento}" required="true" requiredMessage="Preenchimento do campo &ldquo;Data de Nascimento&rdquo; é obrigatório!!">
-                            <f:convertDateTime pattern="dd/MM/yyyy"/>
-                            <f:validateLongRange for="dtanasc" maximum="2016"/>
+                            <f:convertDateTime type="both" pattern="dd/MM/yyyy" timeZone="GMT-3"/>
                         </h:inputText>
                         <h:message class="alert-danger" for="dtanasc"/>
                     </div>

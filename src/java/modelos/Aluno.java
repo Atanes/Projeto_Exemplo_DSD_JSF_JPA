@@ -11,7 +11,6 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  *
@@ -26,7 +25,7 @@ public class Aluno implements Serializable {
     private String matricula;
     private String nome;
     private String Curso;
-    @Temporal(value = TemporalType.DATE)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dtaNascimento;
 
     public String getMatricula() {
@@ -60,7 +59,7 @@ public class Aluno implements Serializable {
     public void setDtaNascimento(Date dtaNascimento) {
         this.dtaNascimento = dtaNascimento;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 3;
