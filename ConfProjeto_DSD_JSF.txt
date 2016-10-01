@@ -1,0 +1,35 @@
+https://github.com/Atanes/Projeto_Exemplo_DSD_JSF_JPA.git
+
+https://mvnrepository.com/artifact/org.jboss/jandex/2.0.3.Final
+
+Copiar e colar o arquivo na pasta: C:\Program Files\NetBeans 8.0.2\java\modules\ext\hibernate4
+
+Atualizar a biblioteca do hibernate com esse arquivo
+
+Trocar a classe de conexão do PostgreSQL pela do Oracle
+
+Alterar o arquivo persistence.xml para:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="ProfessorPU">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <properties>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.20.250.13)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=DBFACET)))" />
+            <property name="javax.persistence.jdbc.user"
+                      value="AL227039" />
+            <property name="javax.persistence.jdbc.password"
+                      value="AL227039" />
+            <property name="javax.persistence.jdbc.driver"
+                      value="oracle.jdbc.OracleDriver" />
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.Oracle9Dialect" />
+            <property name="hibernate.hbm2ddl.auto"
+                      value="update" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />          
+        </properties>
+  </persistence-unit>
+</persistence>
+
