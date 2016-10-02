@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="resources/css/estilo_projeto.css" type="text/css"/>
         <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" type="text/css"/>
         <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" type="text/css"/>
+        <link rel="shortcut icon" href="resources/imagens/portalAluno.ico"/>
     </head>
     <body>
         <div id="container">
@@ -17,13 +18,12 @@
                 <h1>Portal da Universidade</h1>
             </div>
             <hr/>
-            <nav class="navbar navbar-link">
                 <div>
                     <h:form>
-                        <ul class="nav navbar-nav navbar-left">
+                        <ul class="nav nav-pills nav-stacked col-md-3 esquerda">
                             <li>
-                                <h:commandLink action="/professor/CadastrarProfessor" class="btn btn-link btn-lg left">
-                                    <span class="glyphicon glyphicon-user"></span> Cadastrar Professores
+                                <h:commandLink action="/professor/CadastrarProfessor" class="btn btn-link btn-lg">
+                                    <span class="glyphicon glyphicon-user"></span> Cadastrar Professor
                                 </h:commandLink>
                             </li>
                             <li>
@@ -32,7 +32,7 @@
                                 </h:commandLink>
                             </li>
                             <li>
-                                <h:commandLink action="/escola/CadastrarEscola" class="btn btn-link btn-lg left">
+                                <h:commandLink action="/escola/CadastrarEscola" class="btn btn-link btn-lg">
                                     <span class="glyphicon glyphicon-tower"></span> Cadastrar Escola
                                 </h:commandLink>
                             </li>
@@ -42,7 +42,7 @@
                                 </h:commandLink>
                             </li>
                             <li>
-                                <h:commandLink action="/aluno/CadastrarAluno" class="btn btn-link btn-lg left">
+                                <h:commandLink action="/aluno/CadastrarAluno" class="btn btn-link btn-lg">
                                     <span class="glyphicon glyphicon-headphones"></span> Cadastrar Aluno
                                 </h:commandLink>
                             </li>
@@ -54,7 +54,6 @@
                         </ul>
                     </h:form>
                 </div>
-            </nav>
         </div>
     </body>
 
