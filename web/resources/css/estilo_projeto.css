@@ -28,7 +28,7 @@ tbody tr:nth-child(odd){
 }
 
 #container {
-   width: 800px;
+   width: 900px;
    margin: 0 auto;
 }
 
@@ -67,6 +67,9 @@ tbody tr:nth-child(odd){
 }
 .centralizar {
     text-align: center;
+}
+.nav > li > a {
+    text-align: left;
 }
 
 .margen_padrao {
