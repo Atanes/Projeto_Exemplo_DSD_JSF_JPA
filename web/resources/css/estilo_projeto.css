@@ -22,7 +22,7 @@ thead {
 tbody tr:nth-child(odd){
    background-color: #E9E9E9;
 }
-#tabela_alunos {
+#ajuste_tabelas {
     width: 90%;
     margin-left: 5%;
 }
@@ -48,12 +48,12 @@ tbody tr:nth-child(odd){
     float: left;
     margin-top: 0px;
     margin-left: 5px;
-    width: 150px;
+    width: 130px;
 }
 
 .cabecalho h1 {
     font-family: 'Cinzel', serif;
-    font-size: 4em;
+    font-size: 3em;
     color: #337ab7;
     position: relative;
     margin-top: 20px;

@@ -17,20 +17,22 @@ import modelos.Aluno;
  * @author UsuarioGeral
  */
 public class IncluirAluno {
+
     public static void main(String[] args) {
-        
+
         EntityManager em = JPAUtil.getEntityManager();
-        
+
         Aluno aluno = new Aluno();
         aluno.setNome("Lenadro Zanolla");
         aluno.setCurso("Engenharia da Computação");
         aluno.setMatricula("123456");
         aluno.setDtaNascimento(new Date());
-        
+
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         em.persist(aluno);
         tx.commit();
+
         em.close();
 
     }
