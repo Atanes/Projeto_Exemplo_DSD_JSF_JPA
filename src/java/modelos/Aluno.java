@@ -57,9 +57,11 @@ public class Aluno implements Serializable {
     }
 
     public void setDtaNascimento(Date dtaNascimento) {
+
         this.dtaNascimento = dtaNascimento;
+
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 3;
@@ -85,7 +87,5 @@ public class Aluno implements Serializable {
         }
         return true;
     }
-    
-    
 
 }

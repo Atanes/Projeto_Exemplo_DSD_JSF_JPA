@@ -44,7 +44,8 @@
                     <h:outputLabel class="col-xs-2">Ano fundação:</h:outputLabel>
                     <div class="col-xs-8">
                         <h:inputText id="ano" class="form-control" value="#{escolaBean.escola.anoCriacao}" required="true" requiredMessage="Preenchimento do campo &ldquo;Ano fundação&rdquo; é obrigatório!!">
-                            <f:validateLongRange for="ano" minimum="1970" maximum="2016"/>
+                            <f:passThroughAttribute name="type" value="number"/>
+                            <f:passThroughAttribute name="min" value="1970"/>
                         </h:inputText>
                         <h:message class="alert-danger" for="ano"/>
                     </div>
