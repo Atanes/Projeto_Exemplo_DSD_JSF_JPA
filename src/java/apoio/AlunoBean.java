@@ -92,6 +92,6 @@ public class AlunoBean {
 
     public String cadastrarNovo() {
         aluno = new Aluno();
-        return "CadastrarAluno";
+        return "aluno/CadastrarAluno";
     }
 }

@@ -7,9 +7,9 @@
         <title>Portal da Universidade - Lista de Escolas</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="../resources/css/estilo_projeto.css" type="text/css"/>
-        <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap-theme.min.css" type="text/css"/>
-        <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.css" type="text/css"/>
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap.css" />
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap-theme.css" />
+        <h:outputStylesheet library="bootstrap" name="css/estilo_projeto.css" />
         <link rel="shortcut icon" href="resources/imagens/portalAluno.ico"/>
     </h:head>
     <h:body>
@@ -59,10 +59,10 @@
                         </h:column>
                     </h:dataTable>
                     <div class="row">
-                        <h:link class="btn btn-info margen_padrao" outcome="/index.xhtml">
+                        <h:link class="btn btn-info controlesForm" outcome="/index.xhtml">
                             <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
                         </h:link>
-                        <h:commandLink class="btn btn-info margen_padrao" action="#{escolaBean.cadastrarNovo()}">
+                        <h:commandLink class="btn btn-info controlesForm" action="#{escolaBean.cadastrarNovo()}">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Cadastrar
                         </h:commandLink>                      
                     </div>

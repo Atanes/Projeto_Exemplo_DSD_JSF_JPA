@@ -2,58 +2,64 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <head>
+    <h:head>
         <title>Portal da Universidade - Página inicial</title>
         <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="resources/css/estilo_projeto.css" type="text/css"/>
-        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css" type="text/css"/>
-        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap.css" />
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap-theme.css" />
+        <h:outputStylesheet library="bootstrap" name="css/estilo_projeto.css" />
         <link rel="shortcut icon" href="resources/imagens/portalAluno.ico"/>
-    </head>
+    </h:head>
     <body>
         <div id="container">
             <div class="cabecalho">
-                <img src="resources/imagens/portalAluno-01.png" alt="Imagem do portal do aluno"/>
+                <img src="resources/imagens/portalAluno1.png" alt="Imagem do portal do aluno"/>
                 <h1>Portal da Universidade</h1>
             </div>
             <hr/>
-                <div>
-                    <h:form>
-                        <ul class="nav nav-pills nav-stacked col-md-3 esquerda">
-                            <li>
-                                <h:commandLink action="/professor/CadastrarProfessor" class="btn btn-lg">
-                                    <span class="glyphicon glyphicon-user"></span> Cadastrar Professor
-                                </h:commandLink>
-                            </li>
-                            <li>
-                                <h:commandLink action="/professor/ListarProfessores" class="btn btn-link btn-lg">
-                                    <span class="glyphicon glyphicon-list-alt"></span> Listar Professores
-                                </h:commandLink>
-                            </li>
-                            <li>
-                                <h:commandLink action="/escola/CadastrarEscola" class="btn btn-link btn-lg">
-                                    <span class="glyphicon glyphicon-tower"></span> Cadastrar Escola
-                                </h:commandLink>
-                            </li>
-                            <li>
-                                <h:commandLink action="/escola/ListarEscolas" class="btn btn-link btn-lg">
-                                    <span class="glyphicon glyphicon-list"></span> Listar Escolas
-                                </h:commandLink>
-                            </li>
-                            <li>
-                                <h:commandLink action="/aluno/CadastrarAluno" class="btn btn-link btn-lg">
-                                    <span class="glyphicon glyphicon-headphones"></span> Cadastrar Aluno
-                                </h:commandLink>
-                            </li>
-                            <li>
-                                <h:commandLink action="/aluno/ListarAlunos" class="btn btn-link btn-lg">
-                                    <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span> Listar Alunos
-                                </h:commandLink>
-                            </li>
-                        </ul>
-                    </h:form>
-                </div>
+            <div>
+                <h:form>
+                    <ul class="nav nav-pills nav-stacked col-md-3 esquerda">
+                        <li class="alert alert-info h4">
+                            <span class="glyphicon glyphicon-floppy-disk"/> Cadastros
+                        </li>
+                        <li>
+                            <h:commandLink action="#{professorBean.cadastrarNovo()}" class="btn btn-lg">
+                                <span class="glyphicon glyphicon-user"></span> Cadastrar Professor
+                            </h:commandLink>
+                        </li>                       
+                        <li>
+                            <h:commandLink action="#{escolaBean.cadastrarNovo()}" class="btn btn-link btn-lg">
+                                <span class="glyphicon glyphicon-tower"></span> Cadastrar Escola
+                            </h:commandLink>
+                        </li>                        
+                        <li>
+                            <h:commandLink action="#{alunoBean.cadastrarNovo()}" class="btn btn-link btn-lg">
+                                <span class="glyphicon glyphicon-headphones"></span> Cadastrar Aluno
+                            </h:commandLink>
+                        </li>
+                        <li class="alert alert-info h4">
+                            <span class="glyphicon glyphicon-eye-open"/> Listas
+                        </li>
+                        <li>
+                            <h:commandLink action="/professor/ListarProfessores" class="btn btn-link btn-lg">
+                                <span class="glyphicon glyphicon-list-alt"></span> Listar Professores
+                            </h:commandLink>
+                        </li>
+                        <li>
+                            <h:commandLink action="/escola/ListarEscolas" class="btn btn-link btn-lg">
+                                <span class="glyphicon glyphicon-list"></span> Listar Escolas
+                            </h:commandLink>
+                        </li>
+                        <li>
+                            <h:commandLink action="/aluno/ListarAlunos" class="btn btn-link btn-lg">
+                                <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span> Listar Alunos
+                            </h:commandLink>
+                        </li>            
+                    </ul>
+                </h:form>
+            </div>
         </div>
     </body>
 
