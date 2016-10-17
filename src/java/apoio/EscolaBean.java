@@ -97,6 +97,6 @@ public class EscolaBean {
 
     public String cadastrarNovo() {
         escola = new Escola();
-        return "CadastrarEscola";
+        return "escola/CadastrarEscola";
     }
 }

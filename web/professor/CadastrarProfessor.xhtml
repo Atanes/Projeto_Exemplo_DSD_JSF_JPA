@@ -7,9 +7,9 @@
         <title>Portal da Universidade - Cadastro de Professores</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="../resources/css/estilo_projeto.css" type="text/css"/>
-        <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap-theme.min.css" type="text/css"/>
-        <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.css" type="text/css"/>
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap.css" />
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap-theme.css" />
+        <h:outputStylesheet library="bootstrap" name="css/estilo_projeto.css" />
         <link rel="shortcut icon" href="resources/imagens/portalAluno.ico"/>
     </h:head>
     <h:body>
@@ -18,44 +18,45 @@
                 <img src="../resources/imagens/professores.png" alt="Imagem do portal do aluno"/>
                 <h1>Cadastro de professores</h1>
             </div>
-            <hr/>
 
             <h:form id="formulario">
-                <div class="form-group row">
-                    <h:outputLabel class="col-xs-2">Nome:</h:outputLabel>
-                    <div class="col-xs-8">
-                        <h:inputText id="nome" class="form-control" value="#{professorBean.prof.nome}" required="true" requiredMessage="Preenchimento do campo &ldquo;Nome&rdquo; é obrigatório!!"/>
-                        <h:message class="alert-danger" for="nome"/>
+                <fieldset class="alert alert-info controlesForm">
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Nome:</h:outputLabel>
+                        <div class="col-xs-8">
+                            <h:inputText id="nome" class="form-control" value="#{professorBean.prof.nome}" required="true" requiredMessage="Preenchimento do campo &ldquo;Nome&rdquo; é obrigatório!!"/>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <h:outputLabel class="col-xs-2">Titulação:</h:outputLabel>
-                    <div class="col-xs-8">
-                        <h:selectOneMenu id="titulacao" class="form-control" value="#{professorBean.prof.titulacao}" required="true" requiredMessage="Preenchimento do campo &ldquo;Titulação&rdquo; é obrigatório!!" >
-                            <f:selectItem itemValue="" itemLabel="Selecione..." />
-                            <f:selectItem itemValue="Doutor" itemLabel="Doutor" />
-                            <f:selectItem itemValue="Mestre" itemLabel="Mestre" />
-                            <f:selectItem itemValue="Especialista" itemLabel="Especialista" />
-                        </h:selectOneMenu>
-                        <h:message class="alert-danger" for="titulacao"/>
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Titulação:</h:outputLabel>
+                        <div class="col-xs-2">
+                            <h:selectOneMenu id="titulacao" class="form-control" value="#{professorBean.prof.titulacao}" required="true" requiredMessage="Preenchimento do campo &ldquo;Titulação&rdquo; é obrigatório!!" >
+                                <f:selectItem itemValue="" itemLabel="Selecione..." />
+                                <f:selectItem itemValue="Doutor" itemLabel="Doutor" />
+                                <f:selectItem itemValue="Mestre" itemLabel="Mestre" />
+                                <f:selectItem itemValue="Especialista" itemLabel="Especialista" />
+                            </h:selectOneMenu>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <h:outputLabel class="col-xs-2">Ano contratação:</h:outputLabel>
-                    <div class="col-xs-8">
-                        <h:inputText id="ano" class="form-control" value="#{professorBean.prof.anocontratacao}" required="true" requiredMessage="Preenchimento do campo &ldquo;Ano contratação&rdquo; é obrigatório!!">
-                            <f:validateLongRange for="ano" minimum="1900" maximum="2016"/>
-                        </h:inputText>
-                        <h:message class="alert-danger" for="ano"/>
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Ano contratação:</h:outputLabel>
+                        <div class="col-xs-2">
+                            <h:inputText id="ano" class="form-control" value="#{professorBean.prof.anocontratacao}" required="true" requiredMessage="Preenchimento do campo &ldquo;Ano contratação&rdquo; é obrigatório!!">
+                                <f:passThroughAttribute name="type" value="number"/>
+                                <f:passThroughAttribute name="min" value="1970"/>
+                            </h:inputText>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <h:link class="btn btn-info margen_padrao" outcome="/index.xhtml">
+                </fieldset>
+                <div class="row controlesForm">
+                    <h:link class="btn btn-info" outcome="/index.xhtml">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
                     </h:link>
-                    <h:commandLink class="btn btn-info margen_padrao" action="#{professorBean.salva}" >
+                    <h:commandLink class="btn btn-info" action="#{professorBean.salva}" >
                         <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Salvar
                     </h:commandLink>
+
+                    <h:messages class="alert alert-warning"/>
                 </div>
             </h:form>
         </div>
