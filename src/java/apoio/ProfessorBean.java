@@ -99,6 +99,6 @@ public class ProfessorBean {
 
     public String cadastrarNovo() {
         prof = new Professor();
-        return "professor/CadastrarProfessor";
+        return "CadastrarProfessor";
     }
 }
