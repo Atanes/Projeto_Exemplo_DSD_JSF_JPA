@@ -6,7 +6,6 @@
 package teste;
 
 import apoio.JPAUtil;
-import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -23,16 +22,20 @@ public class IncluirAluno {
         EntityManager em = JPAUtil.getEntityManager();
 
         Aluno aluno = new Aluno();
+
         aluno.setNome("Lenadro Zanolla");
         aluno.setCurso("Engenharia da Computação");
         aluno.setMatricula("876543");
+        aluno.setNome("Gustavo da Costa e Silva");
+        aluno.setCurso("Engenharia de Produção");
+        aluno.setMatricula("123256");
         aluno.setDtaNascimento(new Date());
 
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         em.persist(aluno);
         tx.commit();
-
+        
         em.close();
 
     }
