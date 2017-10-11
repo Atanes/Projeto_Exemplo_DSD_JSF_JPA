@@ -24,17 +24,17 @@
                             <span class="glyphicon glyphicon-floppy-disk"/> Cadastros
                         </li>
                         <li>
-                            <h:commandLink action="#{professorBean.cadastrarNovo()}" class="btn btn-lg">
+                            <h:commandLink action="#{professorBean.cadastrarNovo('/professor/')}" class="btn btn-lg">
                                 <span class="glyphicon glyphicon-user"></span> Cadastrar Professor
                             </h:commandLink>
                         </li>                       
                         <li>
-                            <h:commandLink action="#{escolaBean.cadastrarNovo()}" class="btn btn-link btn-lg">
+                            <h:commandLink action="#{escolaBean.cadastrarNovo('/escola/')}" class="btn btn-link btn-lg">
                                 <span class="glyphicon glyphicon-tower"></span> Cadastrar Escola
                             </h:commandLink>
                         </li>                        
                         <li>
-                            <h:commandLink action="#{alunoBean.cadastrarNovo()}" class="btn btn-link btn-lg">
+                            <h:commandLink action="#{alunoBean.cadastrarNovo('/aluno/')}" class="btn btn-link btn-lg">
                                 <span class="glyphicon glyphicon-headphones"></span> Cadastrar Aluno
                             </h:commandLink>
                         </li>

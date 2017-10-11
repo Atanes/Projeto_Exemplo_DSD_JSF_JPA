@@ -25,7 +25,7 @@ public class IncluirAluno {
         Aluno aluno = new Aluno();
         aluno.setNome("Lenadro Zanolla");
         aluno.setCurso("Engenharia da Computação");
-        aluno.setMatricula("123456");
+        aluno.setMatricula("876543");
         aluno.setDtaNascimento(new Date());
 
         EntityTransaction tx = em.getTransaction();

@@ -95,8 +95,8 @@ public class EscolaBean {
         return "CadastrarEscola";
     }
 
-    public String cadastrarNovo() {
+    public String cadastrarNovo(String complemento) {
         escola = new Escola();
-        return "escola/CadastrarEscola";
+        return complemento + "CadastrarEscola";
     }
 }

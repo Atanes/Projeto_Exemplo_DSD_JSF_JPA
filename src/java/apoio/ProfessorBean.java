@@ -97,8 +97,8 @@ public class ProfessorBean {
         return "CadastrarProfessor";
     }
 
-    public String cadastrarNovo() {
+    public String cadastrarNovo(String complemento) {
         prof = new Professor();
-        return "professor/CadastrarProfessor";
+        return complemento + "CadastrarProfessor";
     }
 }

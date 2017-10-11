@@ -53,9 +53,9 @@ public class AlunoBean {
         try {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
-            Aluno a = em.find(Aluno.class, aluno.getMatricula());
+            //Aluno a = em.find(Aluno.class, aluno.getMatricula());
             // Verifica se a pessoa ainda não está salva no banco de dados.
-            if (a != null) {
+            if (aluno.getMatricula() != null) {
                 //Atualiza os dados da pessoa.
                 aluno = em.merge(aluno);
             } else {
@@ -90,8 +90,8 @@ public class AlunoBean {
         return "CadastrarAluno";
     }
 
-    public String cadastrarNovo() {
+    public String cadastrarNovo(String complemento) {
         aluno = new Aluno();
-        return "aluno/CadastrarAluno";
+        return complemento + "CadastrarAluno";
     }
 }

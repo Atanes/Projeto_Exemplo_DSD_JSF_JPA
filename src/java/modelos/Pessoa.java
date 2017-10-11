@@ -7,25 +7,24 @@ package modelos;
 
 import java.io.Serializable;
 import java.util.Objects;
-import javax.faces.bean.ViewScoped;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 /**
- *
- * @author UsuarioGeral
+ * @author Alexandre Atanes de Jesus
+ * @version 1.0
+ * @date 22/10/2016
  */
 @Entity
-@ViewScoped
-public class Escola implements Serializable {
-    
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String nome;
-    private String localizacao;
-    private Integer anoCriacao;
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Pessoa implements Serializable {
+@Id
+@GeneratedValue
+private Long id;
+private String nome;
 
     public Long getId() {
         return id;
@@ -43,44 +42,30 @@ public class Escola implements Serializable {
         this.nome = nome;
     }
 
-    public String getLocalizacao() {
-        return localizacao;
-    }
-
-    public void setLocalizacao(String localizacao) {
-        this.localizacao = localizacao;
-    }
-
-    public Integer getAnoCriacao() {
-        return anoCriacao;
-    }
-
-    public void setAnoCriacao(Integer anoCriacao) {
-        this.anoCriacao = anoCriacao;
-    }
-
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.id);
-        hash = 97 * hash + Objects.hashCode(this.nome);
+        int hash = 5;
+        hash = 11 * hash + Objects.hashCode(this.id);
+        hash = 11 * hash + Objects.hashCode(this.nome);
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (obj == null) {
             return false;
         }
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Escola other = (Escola) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        final Pessoa other = (Pessoa) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
-        return true;
+        return Objects.equals(this.id, other.id);
     }
-    
-    
+
 }
